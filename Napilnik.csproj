@@ -36,6 +36,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Logger\Logger.cs" />
+    <Compile Include="PaymentSystems\PaymentSystems.cs" />
     <Compile Include="Store\Cart.cs" />
     <Compile Include="Store\Store.cs" />
     <Compile Include="Store\Shop.cs" />
