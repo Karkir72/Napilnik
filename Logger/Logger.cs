@@ -9,9 +9,9 @@ namespace Napilnik.Logger
         {
             Pathfinder filePathfinder = new Pathfinder(new FileLogWriter());
             Pathfinder consolePathfinder = new Pathfinder(new ConsoleLogWriter());
-            Pathfinder consoleFridayPathfinder = new Pathfinder(new FridayConsoleLogWriter(new ConsoleLogWriter()));
-            Pathfinder fileFridayPathfinder = new Pathfinder(new FridayConsoleLogWriter(new FileLogWriter()));
-            Pathfinder chainPathfinder = new Pathfinder(new LoggerWriterChain(new ILogger[2] { new ConsoleLogWriter(), new FridayConsoleLogWriter(new FileLogWriter()) }));
+            Pathfinder consoleFridayPathfinder = new Pathfinder(new FridayLogWriter(new ConsoleLogWriter()));
+            Pathfinder fileFridayPathfinder = new Pathfinder(new FridayLogWriter(new FileLogWriter()));
+            Pathfinder chainPathfinder = new Pathfinder(new LoggerWriterChain(new ILogger[2] { new ConsoleLogWriter(), new FridayLogWriter(new FileLogWriter()) }));
         }
     }
 
@@ -51,11 +51,11 @@ namespace Napilnik.Logger
         }
     }
 
-    class FridayConsoleLogWriter : ILogger
+    class FridayLogWriter : ILogger
     {
         private ILogger _logger;
 
-        public FridayConsoleLogWriter(ILogger logger)
+        public FridayLogWriter(ILogger logger)
         {
             _logger = logger;
         }
