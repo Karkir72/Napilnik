@@ -36,6 +36,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Store\Cart.cs" />
+    <Compile Include="Store\Store.cs" />
+    <Compile Include="Store\Shop.cs" />
     <Compile Include="Store\Warehouse.cs" />
     <Compile Include="Store\Good.cs" />
   </ItemGroup>
