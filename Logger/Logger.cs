@@ -63,7 +63,7 @@ namespace Napilnik.Logger
         public void WriteError(string message)
         {
             if (DateTime.Now.DayOfWeek == DayOfWeek.Friday)
-                Console.WriteLine(message);
+                _logger.WriteError(message);
         }
     }
 
